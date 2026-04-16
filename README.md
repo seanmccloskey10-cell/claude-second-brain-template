@@ -20,7 +20,7 @@ The one command worth knowing: **`/brief`** — a weekly briefing where Claude r
 |-------|------------|----------|
 | **Capture** | Tell Claude a thought, share an article, talk about your business | 30 seconds – 10 minutes |
 | **Review** | Claude runs `/brief` weekly — read the output | 5 minutes to read |
-| **Feed** | Save interesting articles to `raw/`, tell Claude to process them | 2 minutes |
+| **Feed** | One-click capture with [Web Clipper](docs/web-clipper/setup.md), then `/ingest` in Claude | 30 seconds capture, 2 min process |
 
 Everything else is handled by Claude behind the scenes.
 
@@ -38,7 +38,10 @@ your-vault/
 ├── log.md            ← Activity log — what was ingested, when briefings ran
 ├── mistakes-made.md  ← Error log (write-only — durable lessons get promoted into CLAUDE.md)
 ├── CLAUDE.md         ← The instruction file Claude reads first
+├── .claude/
+│   └── commands/     ← Slash commands: /brief (weekly review), /ingest (process raw)
 └── docs/             ← Setup guides
+    └── web-clipper/  ← One-click capture: extension setup + 3 importable templates
 ```
 
 ## What This Costs

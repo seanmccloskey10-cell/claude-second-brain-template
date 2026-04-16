@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "Second Brain — Article",
+  "behavior": "create",
+  "triggers": ["schema:@Article"],
+  "noteNameFormat": "{{date|date:\"YYYY-MM-DD\"}}-{{title|safe_name}}",
+  "path": "raw",
+  "properties": [
+    { "name": "title", "value": "{{title}}", "type": "text" },
+    { "name": "type", "value": "raw", "type": "text" },
+    { "name": "source_type", "value": "article", "type": "text" },
+    { "name": "source_url", "value": "{{url}}", "type": "text" },
+    { "name": "source_author", "value": "{{author}}", "type": "text" },
+    { "name": "source_date", "value": "{{published|date:\"YYYY-MM-DD\"}}", "type": "text" },
+    { "name": "ingested", "value": "{{date|date:\"YYYY-MM-DD\"}}", "type": "text" },
+    { "name": "processed", "value": "false", "type": "text" },
+    { "name": "trust", "value": "practitioner", "type": "text" },
+    { "name": "tags", "value": "raw, article, captured-by-clipper", "type": "multitext" }
+  ],
+  "noteContentFormat": "# {{title}}\n\n**Author:** {{author}}\n**Published:** {{published|date:\"YYYY-MM-DD\"}}\n**URL:** {{url}}\n\n## Content\n\n{{content}}"
+}

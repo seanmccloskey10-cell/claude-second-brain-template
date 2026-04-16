@@ -33,13 +33,27 @@ This is where the magic happens. The more you've added during the week, the rich
 
 Your vault gets smarter when you feed it. Here's how to turn your social media scrolling into actual knowledge:
 
-### The workflow
-1. **Scroll X / LinkedIn / wherever.** When you find something interesting — an article, a thread, a post — save it.
-2. **Copy the content into your vault.** Create a file in `raw/`:
+### The fast path — Web Clipper (recommended)
+
+Install the [Obsidian Web Clipper](web-clipper/setup.md) Chrome extension once and capture becomes one click:
+
+1. Scroll X / a blog / YouTube. Find something good.
+2. Click the Web Clipper icon. The right template auto-selects.
+3. Click Save. The file lands in `raw/` with full frontmatter.
+4. Later, in Claude Code: `/ingest` (or "process the new file in raw"). Claude reads it, novelty-checks it, and updates your wiki.
+
+Setup takes 10 minutes once. After that, capture is friction-free. **See [docs/web-clipper/setup.md](web-clipper/setup.md).**
+
+### The manual path — copy-paste
+
+If you don't want the extension (or you're capturing something the clipper can't reach, like a PDF or a screenshot of a paywalled post):
+
+1. Create a file in `raw/`:
    - Name it `YYYY-MM-DD-short-description.md` (e.g., `2026-04-14-client-retention-article.md`)
    - Paste the content
-3. **Tell Claude to process it.** Something like: "I saved an article to raw/. Can you turn it into knowledge for my wiki?" Claude reads it, pulls out what's relevant to YOUR business, and creates or updates wiki pages.
-4. **The raw file stays untouched.** It's your receipt.
+2. Tell Claude to process it. Something like: "I saved an article to raw/. Can you turn it into knowledge for my wiki?"
+3. Claude reads it, pulls out what's relevant to YOUR business, and creates or updates wiki pages.
+4. The raw file stays untouched. It's your receipt.
 
 ### What Claude does behind the scenes
 When you share a thought, process an article, or have a conversation, Claude automatically checks whether anything discussed deserves a wiki page. If it does, Claude proposes one — you approve, and the knowledge is filed. You don't have to think about wiki pages at all. They build up as a side effect of talking to Claude.
