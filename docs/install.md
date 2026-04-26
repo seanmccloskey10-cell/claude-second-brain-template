@@ -100,6 +100,14 @@ If you said "yes" during `/setup`, this is already done. If you said "later" —
 
 That's the whole habit. A few minutes per day. The vault compounds.
 
+## Optional: voice briefings
+
+If you'd rather *listen* to your weekly briefing on a walk than read it, you can enable the optional voice-memo skill. It uses ElevenLabs (free tier — no credit card) to turn the briefing into an MP3.
+
+Setup is 3 minutes. **It's entirely optional** — skip it if you'd rather just read.
+
+→ See [docs/concepts/voice-briefings.md](concepts/voice-briefings.md) for the full setup walk-through.
+
 ---
 
 ## Common Issues

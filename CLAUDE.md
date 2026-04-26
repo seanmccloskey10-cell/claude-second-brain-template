@@ -37,12 +37,21 @@ Slash commands live in `.claude/commands/`. Here's when to use each:
 |---|---|---|
 | `/setup` | First-time vault (placeholder values still in README, or `pillars/` only has `_TEMPLATE.md`) | Interviews the owner, customizes README, creates first pillar, offers global brain setup |
 | `/hello` | Owner is starting a new session | Reads README + this file + SESSION-NOTES.md, briefs the owner on where they are |
-| `/goodbye` | Owner is ending a session and meaningful work happened | Writes session notes, sets one-task homework, sets up the next /hello |
+| `/goodbye` | Owner is ending a session and meaningful work happened | Writes session notes, sets the next-session pointer, sets up the next /hello |
 | `/brief` | 7+ days since the last briefing in `wiki/briefings/` (this fires automatically per the briefing gate above) | Full vault review, surfaces connections, gives one thing to focus on |
 | `/ingest` | Owner shares an article, URL, or "process raw/" | Novelty-checks against existing wiki, saves to raw/, processes into wiki, scans for connections |
 | `/check` | Owner asks "is my setup right?" or you suspect something's misconfigured | Read-only sanity scan: README customized, pillar exists, global file exists, commands present, web-clipper templates present. Returns green/yellow/red report. |
 
 **For everything else, use natural language.** The owner does NOT need to know slash commands exist for routine work — they just talk. Slash commands are tools you reach for when the natural-language path is unclear.
+
+## Optional skills
+
+`.claude/skills/` holds optional capabilities that the vault works fine without. The owner enables them deliberately, usually by adding a key to `.env`.
+
+Currently shipped:
+- `generate-voice-memo` — turns the weekly briefing into an MP3 via the ElevenLabs API. Opt-in: requires `Eleven_Labs=` in `.env`. If the key is missing, `/brief` writes the text briefing and skips the audio step silently. See [docs/concepts/voice-briefings.md](docs/concepts/voice-briefings.md).
+
+When the owner asks about voice briefings, audio versions, or "can I listen to this on a walk?", point them at `docs/concepts/voice-briefings.md` for the 3-minute setup. Don't push the skill — it's purely additive.
 
 ## Folder Map
 

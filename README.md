@@ -54,6 +54,7 @@ your-vault/
 ├── decisions/         ← Business decisions with context
 ├── log.md             ← Activity log — what was ingested, when briefings ran
 ├── mistakes-made.md   ← Error log (write-only — durable lessons get promoted into CLAUDE.md)
+├── SESSION-NOTES.md   ← Session-by-session log (created by your first /goodbye)
 ├── .claude/
 │   ├── commands/      ← /setup, /hello, /goodbye, /brief, /ingest, /check
 │   └── skills/        ← Optional skills (generate-voice-memo for the voice briefings)
