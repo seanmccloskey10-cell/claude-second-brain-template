@@ -17,7 +17,7 @@ This folder is for original material — things you didn't write.
 
 **The workflow:**
 1. Find something interesting → save it here
-2. Tell Claude: "I saved an article to raw/. Can you process it?" → Claude reads it and creates wiki pages
+2. Tell Claude: *"I saved an article to raw/, can you process it?"* (or type `/ingest`) → Claude reads it and creates wiki pages
 3. The raw file stays untouched as your permanent receipt
 
 Six months from now, if you ever think "where did I read that?" — it's here.

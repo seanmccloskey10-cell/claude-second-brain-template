@@ -1,4 +1,10 @@
-The session is ending. Work through these steps in order.
+<!-- AGENT-FACING — written for Claude Code, not for the vault owner. -->
+
+# /goodbye — Session End Notes
+
+The session is ending. The owner may have typed `/goodbye` or said something natural like "I'm done", "let's wrap up", "stop for tonight". Either route runs the same flow.
+
+Work through these steps in order.
 
 STEP 1 — Review the work
 List what was changed or added in this session.
@@ -21,6 +27,6 @@ Phrase it as a starting point: "Next session: continue X" or "Next session: deci
 
 STEP 5 — Close out
 End your reply with one sentence acknowledging today's progress.
-Then say: "Type /hello at the start of your next session to pick up where we left off."
+Then say: "Say 'hi, I'm back' (or type /hello) at the start of your next session and I'll pick up where we left off."
 
 Use plain text in your reply to the owner — no markdown headers, hashtags, or asterisks in the chat output. (SESSION-NOTES.md is still markdown — see STEP 3.)

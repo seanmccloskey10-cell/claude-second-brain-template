@@ -1,10 +1,10 @@
 # Voice Briefings (Optional)
 
-> **TL;DR:** `/brief` can produce an MP3 you can listen to on a walk, in addition to the written briefing. It's powered by ElevenLabs and needs a free API key. Skip this if you'd rather just read the briefing — everything else works the same. Setup takes 3 minutes.
+> **TL;DR:** Your weekly briefing can also produce an MP3 you can listen to on a walk, alongside the written version. It's powered by ElevenLabs and needs a free API key. Skip this if you'd rather just read the briefing — everything else works the same. Setup takes 3 minutes.
 
 ## What this is
 
-When `/brief` runs, it writes a `## Voice memo script` section at the end of the briefing — a tighter, conversational version meant to be read aloud. If you've enabled the optional voice memo skill, that section gets turned into an MP3 saved to `wiki/briefings/audio/`.
+When you generate a weekly briefing — whether by saying *"give me a briefing"*, typing `/brief`, or letting Claude fire it automatically after 7 days — the briefing writes a `## Voice memo script` section at the end. A tighter, conversational version meant to be read aloud. If you've enabled the optional voice memo skill, that section gets turned into an MP3 saved to `wiki/briefings/audio/`.
 
 A weekly briefing is roughly 5–7 minutes of audio. Listen on a walk, in the car, doing dishes. The full text briefing still gets written either way.
 
@@ -51,11 +51,15 @@ Save the file. **`.env` is gitignored** — your key never gets committed or pus
 
 ### 3. Test it
 
-In Claude Code:
+In Claude Code, ask for a briefing — either:
 
 ```
 /brief
 ```
+
+…or just say:
+
+> *"Give me a briefing."*
 
 After the briefing is written, Claude will run the voice-memo skill automatically. You should see output like:
 
@@ -84,7 +88,7 @@ Skip the upgrade unless you actually find yourself listening every week.
 
 Two options:
 
-1. **Delete `.env`** (or empty the `Eleven_Labs=` line). The skill exits silently when the key is missing. Future `/brief` runs just write the text briefing.
+1. **Delete `.env`** (or empty the `Eleven_Labs=` line). The skill exits silently when the key is missing. Future briefings just write the text version.
 2. **Keep the key but tell Claude** *"don't generate audio for the next briefing."* Claude will skip the skill that one time.
 
 The text briefing always gets written. The audio is purely additive.
@@ -107,12 +111,12 @@ Or hardcode it as the default in `.claude/skills/generate-voice-memo/generate.py
 
 - **"ERROR: .env not found"** — run `cp .env.example .env` (or the Windows equivalent) and add your key.
 - **"ERROR: Eleven_Labs= is empty or still the placeholder"** — open `.env` and replace `your-elevenlabs-key-here` with your actual key.
-- **"ERROR: Voice memo script section not found"** — your `/brief` is using an older version of the prompt. Re-pull the latest [`brief.md`](https://github.com/seanmccloskey10-cell/claude-second-brain-template/blob/main/.claude/commands/brief.md) into `.claude/commands/`.
+- **"ERROR: Voice memo script section not found"** — the briefing is using an older version of the prompt. Re-pull the latest [`brief.md`](https://github.com/seanmccloskey10-cell/claude-second-brain-template/blob/main/.claude/commands/brief.md) into `.claude/commands/`.
 - **HTTP 401 from ElevenLabs** — your key is invalid or has been revoked. Generate a fresh one.
 - **HTTP 429** — you've hit the monthly free-tier limit. Wait until the next month resets, or upgrade.
 
 ## Cross-references
 
-- [The four commands](the-four-commands.md) — `/brief` is what produces the voice memo script
+- [The four rhythms](the-four-rhythms.md) — the weekly briefing rhythm produces the voice memo script
 - [Three layers of memory](three-layers-of-memory.md) — what the briefing is for
 - The skill itself: [`.claude/skills/generate-voice-memo/SKILL.md`](../../.claude/skills/generate-voice-memo/SKILL.md)

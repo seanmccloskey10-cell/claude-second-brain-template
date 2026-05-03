@@ -23,22 +23,23 @@ time, with my approval before each change.
    - Confirm the .claude/ folder exists with at least: commands/setup.md,
      commands/hello.md, commands/goodbye.md, commands/brief.md.
 
-2. Setup check — has the vault been customized?
+2. Setup check — has the vault been customised?
    - Read the "Your Vault Right Now" section in README.md.
-   - If you see "_(run /setup)_" or "YYYY-MM-DD" placeholders, the wizard
-     hasn't been run yet. Stop and offer to run /setup.
+   - If you see "_(not set up yet)_" or "YYYY-MM-DD" placeholders, the
+     wizard hasn't been run yet. Stop and offer to run setup (the user
+     can say "let's get started" or type /setup — either works).
 
 3. Pillar check — does at least one pillar exist?
-   - List pillars/. If the only file is _TEMPLATE.md, no pillar has been
-     created. Tell me to run /setup or create one with you.
+   - List pillars/. If the only file is _TEMPLATE.md, no pillar has
+     been created. Tell me to run setup or create one with you.
 
 4. Global instruction file check (only if I asked you to set this up
-   during /setup)
+   during setup)
    - On macOS / Linux: check ~/.claude/CLAUDE.md — does it reference my
      vault path?
    - On Windows: check C:\Users\<my-name>\.claude\CLAUDE.md — same check.
    - If it should exist but doesn't (or doesn't reference my vault), tell
-     me. I might want to redo Step 4 of /setup.
+     me. I might want to redo Step 6 of setup.
 
 5. Voice-memo skill check (only if my .env contains Eleven_Labs= with a
    real key — not the placeholder)
@@ -51,16 +52,16 @@ time, with my approval before each change.
    - If anything's missing, tell me which step.
 
 6. Briefings folder check
-   - Does wiki/briefings/ exist? If not, create it (it's where /brief
-     writes weekly briefings).
+   - Does wiki/briefings/ exist? If not, create it (it's where the
+     weekly briefing is written).
    - Does wiki/briefings/audio/ exist? If not AND I have voice memo
      enabled, create it.
 
 7. Recent activity check
-   - Read log.md (if it exists). When did /brief last run? When did
-     /goodbye last write a session note? If both are over 14 days, my
-     vault may be stale — tell me so I can decide whether to run a
-     catch-up /brief.
+   - Read log.md (if it exists). When did the last weekly briefing
+     run? When was the last session note written? If both are over
+     14 days, my vault may be stale — tell me so I can decide whether
+     to run a catch-up briefing.
 
 8. Folder hygiene check
    - Are there any non-.md files at the vault root that shouldn't be
@@ -89,17 +90,17 @@ Begin.
 
 ## When to use this
 
-- The `/setup` wizard didn't finish, and you don't know what got created.
+- The setup wizard didn't finish, and you don't know what got created.
 - You see strange template placeholders that won't go away.
-- You added an ElevenLabs key but `/brief` still doesn't produce audio.
-- You set up the global instruction file but Claude doesn't know about your business when you open a different folder.
+- You added an ElevenLabs key but the briefing still doesn't produce audio.
+- You set up the global instruction file but Claude doesn't know about your work when you open a different folder.
 - Anything else "isn't working right" and you don't know where to start.
 
 The diagnostic doesn't fix things behind your back. Every change waits for your approval. So pasting it is safe — even if you're not sure what's wrong.
 
 ## When NOT to use this
 
-- You haven't run `/setup` yet — start there instead.
+- You haven't run setup yet — start there instead. Either say *"hi, I'm new"* or type `/setup`.
 - You haven't installed Claude Code yet — see [docs/install.md](docs/install.md).
 - The problem is "Claude is being weird" without anything specific — try a fresh session first (close the terminal, re-open, `claude`).
 

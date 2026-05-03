@@ -1,6 +1,10 @@
+<!-- AGENT-FACING — written for Claude Code, not for the vault owner. -->
+
 # /check — Sanity Scan
 
-You are running a vault health check. Your job is to walk the vault, verify the things that should be true, and produce a short scannable report. Use traffic-light icons (✅ ⚠️ ❌) so the owner can see status at a glance.
+You are running a vault health check. The owner may have typed `/check` or said something natural like "is everything okay", "sanity check my vault", "is anything broken". Either route runs the same flow.
+
+Your job is to walk the vault, verify the things that should be true, and produce a short scannable report. Use traffic-light icons (✅ ⚠️ ❌) so the owner can see status at a glance.
 
 ## What to check
 
@@ -16,7 +20,7 @@ Run all checks. Don't stop at the first failure.
 Read README.md. Look at the "Your Vault Right Now" section.
 
 - ✅ if `**Focus updated:**` shows a real date AND `**Your pillar:**` links to a file that exists in `pillars/`
-- ⚠️ if some placeholders remain (`_(run /setup)_`, `YYYY-MM-DD`) but a pillar file exists — partial setup
+- ⚠️ if some placeholders remain (`_(not set up yet)_`, `YYYY-MM-DD`) but a pillar file exists — partial setup
 - ❌ if all placeholders still present — recommend running `/setup`
 
 ### 3. Pillar file

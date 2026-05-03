@@ -1,6 +1,6 @@
 # Make Your Brain Follow You Everywhere
 
-By default, your vault only works when the vault folder is open in VS Code. This means if you're building an app, writing code, or working on anything else — Claude doesn't know about your business.
+By default, your vault only works when the vault folder is open in VS Code. This means if you're building an app, writing code, or working on anything else — Claude doesn't know about what you've been tracking.
 
 There's a fix. It takes 2 minutes.
 
@@ -8,7 +8,7 @@ There's a fix. It takes 2 minutes.
 
 You create a small instruction file in a special location on your computer. Claude Code reads this file at the start of **every session, in every folder.** It tells Claude: "Before you do anything, go read my vault."
 
-The result: you open any project on your computer, say hello, and Claude already knows your business.
+The result: you open any project on your computer, say hello, and Claude already knows what you've been working on.
 
 ## How to Set It Up
 
@@ -40,7 +40,7 @@ Replace `[YOUR USERNAME]` with your actual username on your computer.
 # Global Instructions
 
 ## My Second Brain
-I have a vault at `[YOUR VAULT PATH]` that stores everything about my business and thinking.
+I have a vault at `[YOUR VAULT PATH]` that stores everything about my work and thinking.
 
 On every session start, before responding, read these two files:
 1. `[YOUR VAULT PATH]/CLAUDE.md`
@@ -51,7 +51,7 @@ Do NOT read `mistakes-made.md` at session start — it's a write-only log. Durab
 Don't announce that you've read them. Just use the context naturally.
 
 ## About Me
-[Write one paragraph about yourself — who you are, what you do]
+[Write one paragraph about yourself — who you are, what you're tracking]
 
 ## How I Like to Work
 - I use voice-to-text, so fix obvious transcription errors without commenting
@@ -60,20 +60,20 @@ Don't announce that you've read them. Just use the context naturally.
 - Push back if I'm making a mistake
 
 ## Wrong-Folder Detection
-If I type any of these commands and you are NOT currently in my vault folder — `/setup`, `/hello`, `/goodbye`, `/brief`, `/ingest`, `/check` — stop and tell me:
+If I say something that's clearly meant for my vault (e.g. *"hi I'm back"*, *"give me a briefing"*, *"process this article"*, *"is everything okay with my vault"*), or if I type any of `/setup`, `/hello`, `/goodbye`, `/brief`, `/ingest`, `/check`, AND you are NOT currently in my vault folder — stop and tell me:
 
 > "You're not in your vault folder right now. Your vault is at `[YOUR VAULT PATH]`. Want me to help you switch to it? You can either close this Claude Code session and reopen it inside the vault folder, or run `cd [YOUR VAULT PATH]` in the terminal."
 
-Do not try to run the command from the wrong folder — it will half-work or fail confusingly. Surfacing the folder mismatch immediately saves the user from a debugging spiral.
+Do not try to run the workflow from the wrong folder — it will half-work or fail confusingly. Surfacing the folder mismatch immediately saves you from a debugging spiral.
 ```
 
 ## How to Test It
 
 1. Open a **completely different folder** in VS Code — an empty folder, anything that isn't your vault.
 2. Start Claude Code.
-3. Ask: **"What do you know about my business?"**
+3. Ask: **"What do you know about what I'm working on?"**
 
-If Claude describes your business → it's working. The brain follows you everywhere.
+If Claude describes it → it's working. The brain follows you everywhere.
 If Claude says it doesn't know → double-check the path in the file you just created.
 
 ## Important Notes

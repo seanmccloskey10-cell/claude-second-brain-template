@@ -1,5 +1,5 @@
 ---
-title: "[Your Business Name]"
+title: "[Your pillar name — what you're tracking]"
 type: pillar
 status: active
 created: YYYY-MM-DD
@@ -9,7 +9,7 @@ tags: []
 
 ## What This Is
 
-(One paragraph: what your business does, who you serve, how you deliver it.)
+(One paragraph. What does this pillar cover? Who or what is involved? How does it fit into your life or work?)
 
 ## North Star
 
@@ -17,7 +17,7 @@ tags: []
 
 ## Current State
 
-(A living status line. Update this regularly — it's the first thing Claude reads about your business.)
+(A living status line. Update this regularly — it's the first thing Claude reads about this pillar.)
 
 ## What's Working
 

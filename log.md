@@ -9,8 +9,8 @@ Append-only chronological record of vault operations. Claude appends to this aft
 
 **Operations:**
 - `ingest` — processed a raw source into wiki pages
-- `lint` — ran a weekly briefing with vault health check
-- `decision` — logged a business decision
+- `briefing` — ran a weekly briefing with vault health check
+- `decision` — logged a decision
 
 ---
 

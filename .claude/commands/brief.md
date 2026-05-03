@@ -1,6 +1,10 @@
-# Brief — Weekly Business Briefing
+<!-- AGENT-FACING — written for Claude Code, not for the vault owner. -->
 
-You are generating a weekly briefing for the vault owner. Your job is to read the entire vault, synthesize what's happened, and surface connections and insights the owner might not see on their own.
+# /brief — Weekly Briefing
+
+You are generating a weekly briefing for the vault owner. Your job is to read the entire vault, synthesise what's happened, and surface connections and insights the owner might not see on their own.
+
+The owner may have typed `/brief` or said something natural like "give me a briefing", "weekly review", "what does my whole vault say", "what am I missing". You may also have been routed here automatically by the briefing gate at session start (7+ days since the last briefing). All three routes run the same flow.
 
 ## What to read (in this order)
 
@@ -86,7 +90,7 @@ This section is what the optional voice-memo skill turns into MP3 audio. It's al
 If the vault has fewer than 5 wiki pages, write a short briefing that:
 1. Summarizes what's there
 2. Suggests what to capture next (based on gaps you see)
-3. Encourages them: "Tell me a few thoughts about your business this week, and next week's briefing will have much more to work with."
+3. Encourages them: "Tell me a few thoughts this week, and next week's briefing will have much more to work with."
 
 In this case, the Voice memo script section can be even shorter (2–3 minutes) — there's not enough material yet.
 

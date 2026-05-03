@@ -3,7 +3,7 @@ title: Wiki Index
 type: index
 status: active
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-30
 tags: [index, wiki]
 ---
 
@@ -11,21 +11,25 @@ tags: [index, wiki]
 
 This is the table of contents for your personal Wikipedia. Claude updates this file automatically whenever a wiki page is created or changed.
 
+## Examples (delete once you've got the hang of it)
+
+- [[wiki/EXAMPLE-what-a-wiki-page-looks-like]] — what a finished wiki page looks like
+
 ## Concepts
 
-- [[wiki/EXAMPLE-client-retention]] — Strategies for keeping clients engaged
+*(entries added as your wiki grows — ideas, frameworks, lessons in your own context)*
 
-## People & Clients
+## People & Things
 
-*(entries added as your wiki grows)*
+*(entries added as your wiki grows — pages about specific people, customers, projects, or things you reference often)*
 
 ## Strategies & Frameworks
 
 *(entries added as your wiki grows)*
 
-## Industry & Market
+## Domain & Context
 
-*(entries added as your wiki grows)*
+*(entries added as your wiki grows — relevant industry, market, or domain knowledge)*
 
 ## Briefings
 

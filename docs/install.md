@@ -22,7 +22,7 @@ Two ways to do this. **Pick whichever feels easier — the result is the same.**
 1. Go to the GitHub page: https://github.com/seanmccloskey10-cell/claude-second-brain-template
 2. Click the green **Code** button → **Download ZIP**
 3. Extract the ZIP somewhere on your computer (e.g., your Documents folder)
-4. Rename the extracted folder to something meaningful — your business name works well (`yan-tutoring`, `speechway-vault`, etc.)
+4. Rename the extracted folder to something meaningful — what you're tracking works well (`my-tutoring`, `the-clinic`, `phd-thesis`, `personal-brain`, etc.)
 
 ### Option B — Git clone (if you already use git)
 
@@ -34,7 +34,7 @@ Replace `my-brain` with whatever you want to call your vault.
 
 ---
 
-> ⚠️ **Important — read this carefully.** The folder you just created **IS your vault.** Don't create a new empty folder alongside it. The cloned/extracted folder, with all its files inside, is what you'll use as your second brain. The placeholder content (in README.md, in `pillars/_TEMPLATE.md`) gets customized for you when you run `/setup` in Step 3. So if you see a `YYYY-MM-DD` placeholder or an empty section, that's normal — `/setup` fills it in.
+> ⚠️ **Important — read this carefully.** The folder you just created **IS your vault.** Don't create a new empty folder alongside it. The cloned/extracted folder, with all its files inside, is what you'll use as your second brain. The placeholder content (in README.md, in `pillars/_TEMPLATE.md`) gets customised for you when you run setup in Step 3. So if you see a `YYYY-MM-DD` placeholder or an empty section, that's normal — setup fills it in.
 
 ## Step 2 — Open it in VS Code and start Claude Code
 
@@ -51,31 +51,37 @@ Replace `my-brain` with whatever you want to call your vault.
 
 Claude reads `CLAUDE.md` automatically. It now knows how to work with the vault.
 
-## Step 3 — Run `/setup`
+## Step 3 — Start setup
 
-In the Claude chat, type:
+You have two options — pick whichever feels natural:
+
+**Option A — Just talk:**
+
+> *"Hi, I'm new — let's get started."*
+
+**Option B — Type the slash command:**
 
 ```
 /setup
 ```
 
-Claude will walk you through a 5-10 minute wizard:
-- Asks your name and what your business does
-- Customizes your README with your actual focus
+Either way, Claude walks you through a 5-10 minute wizard:
+- Asks your name and what you want to track
+- Customises your README with your actual focus
 - Creates your first pillar file from the template
 - Offers to set up the global instruction file (Step 4 below)
 
-**The wizard handles all the customization for you.** You just answer questions. Claude shows you every change before it writes anything.
+**The wizard handles all the customisation for you.** You just answer questions. Claude shows you every change before it writes anything.
 
 ## Step 4 — Make the brain follow you everywhere
 
-This is offered automatically by `/setup`, but worth understanding.
+This is offered automatically during setup, but worth understanding.
 
-By default, Claude only knows about your vault when the vault folder is open in VS Code. With one small file in a special location, Claude reads your vault from **any** folder on your computer — so when you're working on something else, Claude still knows about your business.
+By default, Claude only knows about your vault when the vault folder is open in VS Code. With one small file in a special location, Claude reads your vault from **any** folder on your computer — so when you're working on something else, Claude still knows what you've been tracking.
 
-If you said "yes" during `/setup`, this is already done. If you said "later" — see [global-instruction-file.md](global-instruction-file.md) when you're ready (2 min setup).
+If you said "yes" during setup, this is already done. If you said "later" — see [global-instruction-file.md](global-instruction-file.md) when you're ready (2 min setup).
 
-**To test it:** open any other folder in VS Code. Start Claude Code. Ask: *"What do you know about my business?"* If Claude describes your business, it's working everywhere.
+**To test it:** open any other folder in VS Code. Start Claude Code. Ask: *"What do you know about what I'm working on?"* If Claude describes it, it's working everywhere.
 
 ## Step 5 — Open in Obsidian and run your first briefing
 
@@ -85,7 +91,12 @@ If you said "yes" during `/setup`, this is already done. If you said "later" —
    - **VS Code** — where you work with Claude (capture, ingest, brief)
    - **Obsidian** — where you browse your notes, follow links, see the big picture
 
-2. Back in VS Code, run your first briefing:
+2. Back in VS Code, run your first briefing — either say:
+
+   > *"Give me a briefing."*
+
+   …or type:
+
    ```
    /brief
    ```
@@ -95,8 +106,8 @@ If you said "yes" during `/setup`, this is already done. If you said "later" —
 ## What to Do This Week
 
 1. **One thought per day** — open Claude Code, just say what's on your mind. 30 seconds, voice-transcribe if you can.
-2. **Find one article** relevant to your business. Save it in `raw/` (or use the [Web Clipper](web-clipper/setup.md) for one-click capture). Tell Claude to process it.
-3. **Wait for `/brief` to fire.** Claude tracks when your last briefing was and runs one automatically when it's time. Or run `/brief` yourself anytime.
+2. **Find one article** relevant to what you're tracking. Save it in `raw/` (or use the [Web Clipper](web-clipper/setup.md) for one-click capture). Tell Claude to process it.
+3. **Let the briefing fire on its own.** Claude tracks when your last briefing was and runs one automatically when it's time. Or ask for one yourself anytime.
 
 That's the whole habit. A few minutes per day. The vault compounds.
 
@@ -128,7 +139,7 @@ Make sure you're in the vault folder when you start Claude Code. Check that `CLA
 Open the folder in VS Code. If you can see `CLAUDE.md`, `README.md`, and folders called `pillars/`, `raw/`, `wiki/` — you're in your vault. That folder, with everything in it, is your second brain.
 
 **"The README has placeholders like `YYYY-MM-DD` — is something broken?"**
-No, those are intentional. They get filled in by `/setup`. If you ran `/setup` and they're still there, run it again — it may have been interrupted.
+No, those are intentional. They get filled in during setup. If you ran setup and they're still there, run it again — it may have been interrupted. Either say *"let's redo setup"* or type `/setup`.
 
 **"I want to back up my vault"**
 Your vault is just files on your computer. You can:

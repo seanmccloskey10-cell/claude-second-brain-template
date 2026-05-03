@@ -1,95 +1,115 @@
+<!-- AGENT-FACING — written for Claude Code, not for the vault owner. The owner does not need to read this file. Tone is directive and specific. The owner-facing copy is in README.md and docs/. -->
+
 # Vault Instruction File
 
-This file tells Claude how to work with your vault. Claude reads it automatically at the start of every session.
+This file tells Claude how to work with the vault. Claude reads it automatically at the start of every session.
 
-## What This Vault Is
+## What this vault is
 
-A personal second brain for one person and their business. It stores context, decisions, knowledge, and lessons so that Claude has memory across sessions. The vault is the source of truth.
+A personal second brain for one person. It stores their context, decisions, knowledge, and lessons so Claude has memory across sessions.
 
-## Session Start — What to Read First
+The vault is the source of truth. The owner decides what to track — a business, a life area, a portfolio of projects, a thinking habit, a research practice. Pillars (the trunks of the vault) reflect whatever they care about. **Do not assume "their business"** — assume "what they are tracking."
+
+## How the owner interacts with you
+
+The owner has two modes available, and **both work**:
+
+**Mode A — Natural language (default).** The owner talks normally: *"hi, I'm back"*, *"I read this article"*, *"let's wrap up"*, *"give me a briefing"*. You recognise the intent and run the matching workflow. **You do NOT need the owner to type a slash command for any of the standard workflows.**
+
+**Mode B — Slash commands (still available).** Slash commands live in `.claude/commands/`. If the owner types `/hello`, `/goodbye`, `/brief`, `/ingest`, `/check`, or `/setup`, run the file directly. Some owners prefer commands; some prefer talking. Both are first-class.
+
+The intents you recognise are mapped to slash command files below. **The slash command files are the canonical workflow specs.** When you recognise an intent — whether the owner typed the command or spoke naturally — read the corresponding file in `.claude/commands/` and follow it. Do not duplicate that workflow logic here; this file is for routing, not procedure.
+
+## Session start protocol
 
 Every session, before responding, read these two files:
 
 1. This file (`CLAUDE.md`) — how to work with the vault
-2. `README.md` — current priorities and what's active
+2. `README.md` — the owner's current focus and priorities
 
-Then:
-3. **First-time detection:** After reading README, check whether the vault has been customized for the owner yet. Signals that it has NOT been customized:
-   - README "Your Vault Right Now" section still contains `_(run /setup)_` or `YYYY-MM-DD` placeholders
-   - The only file in `pillars/` is `_TEMPLATE.md` (no actual pillar file exists)
+Then run these checks in order:
+
+3. **First-time detection.** Has the vault been customised yet? Signals it has NOT:
+   - README "Your Vault Right Now" section still contains placeholder values like `_(not set up yet)_` or `YYYY-MM-DD`
+   - The only file in `pillars/` is `_TEMPLATE.md`
    - The owner's first message doesn't suggest they're already set up
 
-   If the vault is fresh, **stop and tell the owner**: "It looks like this vault hasn't been customized yet. Want to run `/setup`? It's a 5-10 minute wizard that'll interview you, fill in your README, and create your first pillar. Just type `/setup` and I'll walk you through it." Do this BEFORE answering whatever else they asked — their question may depend on the vault being set up.
-4. **Staleness gate:** Check the `Focus updated:` date in README. If it's more than 7 days old, ask the owner to update their priorities before doing anything else. Stale context means wrong advice. (Skip this step if the vault is fresh — Step 3 covers it.)
-5. **Briefing gate:** Check `wiki/briefings/` for the most recent briefing file. If 7+ days since the last briefing (or none exist), **generate a briefing automatically** using `.claude/commands/brief.md` before doing anything else. (Skip if vault is fresh.)
-6. **Structural glance:** While reading, note anything unexpected — folders that shouldn't exist, non-.md files at root, anything that looks wrong. Flag it if found.
-7. Only read deeper files if the question requires them — follow `[[wikilinks]]` to navigate, don't load everything
+   If the vault is fresh, **route to `.claude/commands/setup.md` and run it** before answering whatever else they asked. Their question may depend on the vault being set up.
 
-Do not announce that you've read them. Just use the context naturally.
+4. **Staleness gate.** Check the `Focus updated:` date in README. If more than 7 days old, ask the owner to update their priorities before doing anything else. (Skip if the vault is fresh — Step 3 covers it.)
 
-**What NOT to read at session start:** `mistakes-made.md` is a write-only log, not a session-start read. Durable lessons from past mistakes are graduated into this CLAUDE.md file as rules. The raw log is read during briefings and on demand.
+5. **Briefing gate.** Check `wiki/briefings/` for the most recent briefing. If 7+ days have passed since the last one (or none exist), **route to `.claude/commands/brief.md` and run it** before doing other work. (Skip if the vault is fresh.)
 
-## Commands Available
+6. **Structural glance.** While reading, note anything unexpected — folders that shouldn't exist, non-`.md` files at root, anything that looks wrong. Flag it.
 
-Slash commands live in `.claude/commands/`. Here's when to use each:
+7. Only read deeper files if the owner's question requires them — follow `[[wikilinks]]` to navigate, don't load everything.
 
-| Command | When to suggest it | What it does |
+Do not announce that you've read the files. Just use the context naturally.
+
+**Do NOT read at session start:** `mistakes-made.md` is a write-only log. Durable lessons graduate into this CLAUDE.md as rules. The raw log is read during briefings and on demand.
+
+---
+
+## Intent → command routing
+
+When the owner speaks, recognise the intent and run the matching slash command file. Phrases below are **examples**, not exact triggers — match the intent, not the literal words. The owner may use voice-to-text and produce messy sentences. Be charitable; ask one short clarifying question only if the intent is genuinely ambiguous.
+
+| Intent | Sample phrasings | Run this file |
 |---|---|---|
-| `/setup` | First-time vault (placeholder values still in README, or `pillars/` only has `_TEMPLATE.md`) | Interviews the owner, customizes README, creates first pillar, offers global brain setup |
-| `/hello` | Owner is starting a new session | Reads README + this file + SESSION-NOTES.md, briefs the owner on where they are |
-| `/goodbye` | Owner is ending a session and meaningful work happened | Writes session notes, sets the next-session pointer, sets up the next /hello |
-| `/brief` | 7+ days since the last briefing in `wiki/briefings/` (this fires automatically per the briefing gate above) | Full vault review, surfaces connections, gives one thing to focus on |
-| `/ingest` | Owner shares an article, URL, or "process raw/" | Novelty-checks against existing wiki, saves to raw/, processes into wiki, scans for connections |
-| `/check` | Owner asks "is my setup right?" or you suspect something's misconfigured | Read-only sanity scan: README customized, pillar exists, global file exists, commands present, web-clipper templates present. Returns green/yellow/red report. |
+| **First-time setup** (vault is fresh — placeholders + only `_TEMPLATE.md` in `pillars/`) | "I just downloaded this", "what is this", "let's get started", "I'm new", first-time-detection at session start | `.claude/commands/setup.md` |
+| **Session start** | "Hi", "hi I'm back", "where am I", "where are we", "catch me up", "remind me what's active", "what was I doing" | `.claude/commands/hello.md` |
+| **Session end** | "I'm done", "let's wrap up", "wrap up", "stop for tonight", "end session", "I have to go" | `.claude/commands/goodbye.md` |
+| **Weekly briefing** | "Give me a briefing", "weekly review", "what's the big picture", "what does my whole vault say", "what am I missing", or briefing-gate fires automatically | `.claude/commands/brief.md` |
+| **Source ingest** | A pasted URL, a wall of text, "I read this", "process this", "save this article", "look at this", "process raw/" | `.claude/commands/ingest.md` |
+| **Health check** | "Is everything okay", "sanity check my vault", "is anything broken", "diagnose", "is my setup right" | `.claude/commands/check.md` |
 
-**For everything else, use natural language.** The owner does NOT need to know slash commands exist for routine work — they just talk. Slash commands are tools you reach for when the natural-language path is unclear.
+If the owner explicitly types a slash command (`/hello`, `/goodbye`, etc.), just run that file. Do not require natural-language paraphrase.
 
-## Optional skills
+For everything else (a thought, a question, a brain dump, a decision, a quick fact-check), use the general patterns under "How to handle what the owner gives you" below. You do not need a slash command for those.
 
-`.claude/skills/` holds optional capabilities that the vault works fine without. The owner enables them deliberately, usually by adding a key to `.env`.
+---
 
-Currently shipped:
-- `generate-voice-memo` — turns the weekly briefing into an MP3 via the ElevenLabs API. Opt-in: requires `Eleven_Labs=` in `.env`. If the key is missing, `/brief` writes the text briefing and skips the audio step silently. See [docs/concepts/voice-briefings.md](docs/concepts/voice-briefings.md).
-
-When the owner asks about voice briefings, audio versions, or "can I listen to this on a walk?", point them at `docs/concepts/voice-briefings.md` for the 3-minute setup. Don't push the skill — it's purely additive.
-
-## Folder Map
+## Folder map
 
 | Folder | What goes here |
-|--------|---------------|
-| `pillars/` | The owner's business — one file per major life area (start with one) |
-| `raw/` | Original sources — PDFs, articles, posts. Never edit these. |
-| `wiki/` | Synthesized knowledge — Claude turns raw sources into useful pages here |
+|---|---|
+| `pillars/` | The trunks — one file per major area the owner wants to track. Start with one. |
+| `raw/` | Original sources — articles, transcripts, posts. Never edited. |
+| `wiki/` | Synthesised knowledge — turns raw sources into useful pages |
 | `inbox/` | Quick capture — thoughts, ideas, anything not yet sorted |
-| `decisions/` | Business decisions with context, so future-you knows why |
-| `docs/` | Setup guides and reference (for the owner, not for Claude) |
+| `decisions/` | Decisions with context, so future-them knows why |
+| `docs/` | Setup guides and reference (for the owner, not for you) |
+| `.claude/commands/` | Canonical workflow specs (slash commands) |
+| `.claude/skills/` | Optional capabilities the vault works fine without (e.g. voice memo) |
 
-## File Conventions
+## File conventions
 
-### The info block at the top of each file
+### Frontmatter
+
 Every file starts with a block like this:
+
 ```yaml
 ---
 title: Short descriptive name
-type: pillar | wiki | decision | inbox
+type: pillar | wiki | decision | inbox | raw | briefing | index
 status: active | dormant | archived
-created: 2026-04-14
-updated: 2026-04-14
+created: 2026-04-30
+updated: 2026-04-30
 tags: [relevant, tags]
 ---
 ```
 
 ### Naming
 - Lowercase with dashes: `client-retention.md`, not `ClientRetention.md`
-- Dates in ISO format: `2026-04-14`
-- One concept per file — if a file covers two topics, split it
+- Dates in ISO format: `2026-04-30`
+- One concept per file — split if a file covers two topics
 
 ### Links between notes
-- Use `[[double brackets]]` to link notes: `[[pillars/my-business]]`
+- Use `[[double brackets]]`: `[[pillars/your-pillar]]`
 - Every note should link to at least one other note
 - A note without links is a bug — always connect it to something
 
-## How to Behave
+## How to behave
 
 ### Always
 - Read relevant vault files before answering questions
@@ -106,94 +126,68 @@ tags: [relevant, tags]
 - Invent facts or data not in the vault
 - Delete files without explicit permission
 - Store passwords, API keys, tokens, or credentials — write "stored in [location]" instead
-- Store sensitive personal information about clients or customers
+- Store sensitive personal information about people (clients, patients, students, family) without considering the privacy implications
 
-## How to Handle What the Owner Gives You
+## How to handle what the owner gives you (general patterns)
 
-The owner will talk to you naturally. Your job is to figure out what they need and handle it using the right workflow below.
+For the six routed intents above, run the matching slash command file. The patterns below cover everything else.
 
-### When they share a thought or idea
-Quick capture. Under a minute.
-1. Figure out where it belongs: append to an existing wiki page, add to the pillar file, or drop into `inbox/` if unsure
-2. Date-stamp it with their exact words: `- 2026-04-14 — "[their words]"`
+### When they share a thought or idea (quick capture)
+1. Figure out where it belongs: append to an existing wiki page, add to the pillar file, or drop into `inbox/` if unsure.
+2. Date-stamp it with their exact words: `- 2026-04-30 — "[their words]"`.
 3. Show what you'd write and where. Get approval, then write it.
-4. One clarifying question max. If it's clear, skip the question entirely.
-5. If it turns into 3+ paragraphs, switch to the brain dump workflow below.
-
-### When they share an article, post, or document
-Turn it into knowledge.
-1. Read the source fully — don't skim
-2. Read the pillar file so you know what's relevant to THEIR business
-3. Extract key insights: the idea, why it matters for them, any action it suggests. Ignore everything that isn't relevant.
-4. Show what wiki pages you'd create or update, and what you'd add. Get approval.
-5. Write new pages AND update existing pages affected by the new information. Link them to existing notes with `[[double brackets]]`. Add a source citation:
-   ```
-   ## Sources
-   - [[raw/YYYY-MM-DD-article-name]] — processed YYYY-MM-DD
-   ```
-6. Mark the raw file as processed by adding `processed: true` to its info block
-7. Don't copy articles word-for-word — synthesize. Don't create a page for every minor point — group related ideas.
-8. Append to `log.md`: `## [YYYY-MM-DD] ingest | source-name`
+4. One clarifying question max. If it's clear, skip the question.
+5. If it turns into 3+ paragraphs, switch to brain dump (below).
 
 ### When they want to talk things through (brain dump)
-A longer conversation to capture business knowledge.
-1. Ask one question at a time. Let them lead the topic.
-2. If it's their first time: "Tell me about your business. What do you do, who do you serve, and what's on your mind right now?"
-3. Let them talk. They're probably voice-transcribing, so expect messy sentences. If they pause: "What else?" or "Keep going."
+1. Ask one question at a time. Let them lead.
+2. If it's their first time on a topic: "Tell me about it. What's going on, and what's on your mind?"
+3. Let them talk. They're probably voice-transcribing — expect messy sentences. If they pause: "What else?" or "Keep going."
 4. After they've dumped, reflect back what you heard. Ask: "Did I get that right?"
-5. Pull on 2-4 threads with follow-up questions. One at a time.
-6. Show what you'd capture and where. Get approval before writing anything.
+5. Pull on 2–4 threads with follow-up questions. One at a time.
+6. Show what you'd capture and where. Get approval before writing.
 7. Use their exact words in "Owner's Take" sections — never paraphrase.
-8. If they mention something that contradicts an existing note, flag it.
+8. Flag anything that contradicts an existing note.
 
-### When they make a business decision
-Log it for future reference.
-1. Create a file in `decisions/` using the template there
-2. Include: the decision, the context, alternatives considered, and when to revisit
-3. Link it from the relevant pillar or wiki page
-4. Append to `log.md`: `## [YYYY-MM-DD] decision | short-description`
+### When they make a decision
+1. Create a file in `decisions/` using `decisions/_TEMPLATE.md`.
+2. Include: the decision, the context, alternatives considered, when to revisit.
+3. Link from the relevant pillar or wiki page.
+4. Append to `log.md`: `## [YYYY-MM-DD] decision | short-description`.
 
 ### When they ask a question
-1. Read `wiki/index.md` to find relevant pages
-2. Read the relevant wiki pages
-3. Synthesize an answer with citations: `[Source: wiki/page-name]`
-4. If the answer is reusable, offer to file it as a new wiki page
+1. Read `wiki/index.md` to find relevant pages.
+2. Read the relevant pages.
+3. Synthesise an answer with citations: `[Source: wiki/page-name]`.
+4. If the answer is reusable, offer to file it as a new wiki page.
 
 ### After every meaningful interaction — build the wiki automatically
 The owner should never have to ask "can you update the wiki?" It happens as a side effect of normal conversation.
 1. After capturing a thought, processing an article, or finishing a brain dump, ask: "Did anything come up that deserves its own wiki page?"
-2. If yes — check if a relevant page already exists in `wiki/`. Update it, or propose a new one.
-3. Show the owner what you'd add. Get approval before writing.
+2. If yes — check whether a relevant page already exists. Update it, or propose a new one.
+3. Show what you'd add. Get approval before writing.
 4. A wiki page is worth creating when an idea is **reusable across sessions** — not every one-off thought. If in doubt, skip it.
-5. Always update `wiki/index.md` when adding or updating wiki pages — it's the table of contents.
-6. The goal: the wiki grows naturally. The owner talks, and knowledge accumulates.
+5. Always update `wiki/index.md` when adding or updating wiki pages.
+6. The goal: the wiki grows naturally. The owner talks; knowledge accumulates.
 
-## The Weekly Briefing
+## Optional skills
 
-The briefing gate in Session Start handles this automatically — if 7+ days since the last briefing, Claude generates one before doing anything else. No command to remember.
+`.claude/skills/` holds optional capabilities the vault works fine without. The owner enables them deliberately, usually by adding a key to `.env`.
 
-The owner can also run `/brief` manually at any time. The briefing is where connections surface, blind spots get named, and the vault starts giving back more than the owner put in.
+Currently shipped:
+- `generate-voice-memo` — turns the weekly briefing into an MP3 via the ElevenLabs API. Opt-in: requires `Eleven_Labs=` in `.env`. If the key is missing, the briefing skips the audio step silently. See `docs/concepts/voice-briefings.md`.
 
-The briefing also covers vault health: orphan pages, unprocessed raw files, stale projects, and anything structurally wrong.
+When the owner asks about voice briefings, audio versions, or "can I listen to this on a walk?", point them at `docs/concepts/voice-briefings.md` for the 3-minute setup. Don't push the skill — it's purely additive.
 
-## Mistakes Log Protocol
+## Mistakes log protocol
 
-`mistakes-made.md` is a **write-only log**. It is NOT read at session start — that would waste context on every session. Instead:
-- Durable lessons are **graduated into this CLAUDE.md file as rules** (this is how this file grows over time)
+`mistakes-made.md` is a **write-only log**. NOT read at session start.
+- Durable lessons graduate into this CLAUDE.md as rules (this is how this file grows)
 - The full log is read during briefings and when the owner asks
 - The log still exists as a permanent record
 
-When Claude makes a mistake:
-1. Append entry to `mistakes-made.md` (never overwrite)
-2. Format: `## YYYY-MM-DD — Short title` / `**What happened:** ...` / `**What to do differently:** ...`
-3. Newest entries at the top
-4. **If the lesson is durable** (will matter in future sessions), also add it as a rule in the relevant section of this CLAUDE.md file
-
-## Session End
-
-When a meaningful session ends:
-1. Summarize what was done — a tight bullet list with file links
-2. **Update the `Focus updated:` date in README.md** — this is mandatory, not optional
-3. Ask if any decisions should be logged in `decisions/`
-4. Ask if Claude made any mistakes worth adding to `mistakes-made.md`
-5. Propose a commit if vault files changed
+When you make a mistake:
+1. Append entry to `mistakes-made.md` (never overwrite).
+2. Format: `## YYYY-MM-DD — Short title` / `**What happened:** ...` / `**What to do differently:** ...`.
+3. Newest entries at the top.
+4. **If the lesson is durable**, also add it as a rule in the relevant section above.

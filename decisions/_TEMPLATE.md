@@ -39,4 +39,4 @@ tags: []
 
 ## Related
 
-- [[pillars/your-business]]
+- [[pillars/your-pillar]]

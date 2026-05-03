@@ -6,7 +6,7 @@ Quick thoughts, half-formed ideas, links to check later, reminders to yourself. 
 
 **Naming:** `YYYY-MM-DD-short-description.md` or just dump text into a single `today.md` file.
 
-**The rule:** Nothing should live here for more than a week. During your weekly `/brief`, Claude will flag anything sitting in the inbox and suggest where it should go.
+**The rule:** Nothing should live here for more than a week. The weekly briefing flags anything sitting in the inbox and suggests where it should go.
 
 If you're not sure whether something goes in `inbox/` or `raw/`:
 - **inbox/** = your own thoughts and ideas

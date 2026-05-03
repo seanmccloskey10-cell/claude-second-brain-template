@@ -1,6 +1,10 @@
+<!-- AGENT-FACING — written for Claude Code, not for the vault owner. -->
+
 # /ingest — Feed Your Second Brain
 
-You are ingesting content into the owner's vault. They will give you one of:
+You are ingesting content into the owner's vault. The owner may have typed `/ingest`, pasted a URL or wall of text, or said something natural like "I read this article", "process this", "save this", or "process raw/". All routes run the same flow.
+
+They will give you one of:
 - A pasted block of text (transcript, article, X post)
 - A URL to fetch
 - The phrase "process raw/" (or similar) — meaning ingest every file in `raw/` with `processed: false`
@@ -80,7 +84,7 @@ Paste the full content below the frontmatter. **Do NOT summarize at this stage**
 
 Extract insights — but ONLY the NEW and REINFORCED items from Step 2:
 - What's the core idea?
-- Why does it matter for the owner?
+- Why does it matter for what the owner is tracking?
 - What's actionable?
 - Ignore filler, repetition, self-promotion, AND anything the vault already covers
 
