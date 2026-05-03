@@ -61,6 +61,25 @@ Update the "Your Vault Right Now" section in README.md with their actual data:
 
 Show the owner the new section before writing. Get explicit approval ("yes" or similar) before writing.
 
+## Step 4.5 — Privacy guardrails (if their work involves other people)
+
+Before they start using the vault, ask:
+
+> "Quick safety check: based on what you told me, will your notes ever involve other people — clients, patients, students, family, colleagues? If yes, let's set a privacy rule together so you don't accidentally save something you shouldn't. Habits form in the first hour and this is the moment to set them."
+
+If their answer is yes (or "probably"), propose a default privacy block to add to their pillar's "What This Is" section:
+
+> ## Privacy Guardrails
+>
+> - Reference people by initials only (e.g. M.R., not Maria Rodriguez).
+> - Don't store account numbers, addresses, contact details — those live in the actual system of record (CRM, school portal, hospital records, etc.).
+> - Don't store anything about minors.
+> - Don't store medical or financial specifics that the person hasn't consented to having an AI see.
+
+Show the block. Let them edit, accept, or skip. If they accept, add it to the pillar file you create in Step 5.
+
+If their answer is no (purely personal vault — own studies, own creative practice, own research), skip this step and move on.
+
 ## Step 5 — Create their first pillar file
 
 Decide on a pillar slug from their answers. Use lowercase-with-dashes (e.g. `tutoring-practice`, `the-clinic`, `personal-research`, `pottery-business`, `phd-thesis`). Show the slug to the owner first and ask: "I'm going to create your pillar file at `pillars/[slug].md`. Does that look right, or want to call it something else?"
@@ -95,7 +114,15 @@ If yes:
    - Their vault path (the folder you're currently in — use the absolute path)
    - Their name and a one-line description from the interview
 5. Show the file before writing. Get approval.
-6. After creating the file, tell them: "Quit VS Code completely and reopen it for the global file to take effect. Then test: open any other folder, start Claude Code, and ask 'what do you know about what I'm working on?' If I describe it, the brain is following you everywhere."
+6. After creating the file, tell them: "Quit VS Code completely and reopen it for the global file to take effect. Then run this exact test — don't improvise:
+>
+> 1. Open any other folder in VS Code (not this vault).
+> 2. Start Claude Code.
+> 3. Paste this question word-for-word: **'What do you know about what I'm working on?'**
+>
+> If I describe your priorities and your pillar — it's working. If I say 'I don't know' or describe the new folder instead — something didn't connect, and we'll fix it together.
+>
+> Don't just say 'hi' as a test — a generic greeting won't prove anything either way."
 
 If they say no, tell them: "No problem. Whenever you're ready, just ask me to set up the global instruction file, or follow `docs/global-instruction-file.md`."
 
@@ -119,6 +146,17 @@ If later: tell them they can ask whenever they're ready.
 > If you'd rather use slash commands, `/hello`, `/goodbye`, `/brief`, `/ingest`, and `/check` all still work. Both modes do the same thing.
 >
 > Try saying 'hi, I'm back' right now to see how it works."
+
+## Step 8.5 — Clean up setup-time files
+
+After the closing message, the vault still has `HANDOFF-PROMPT.md` and `START-HERE.md`-style files at the root that were only useful before setup. They add cognitive noise post-setup.
+
+Tell the owner:
+
+> "One last bit of housekeeping. There are a couple of files at the top of your vault that were only needed for setup — `HANDOFF-PROMPT.md` and any `START-HERE.md` if it exists. Want me to move them into `docs/setup-archive/` so your vault root stays clean? You can always grab them back if you re-clone for someone else."
+
+If yes: create `docs/setup-archive/` and move (not delete) those files there. Show the move before doing it.
+If no: leave them alone.
 
 ## Rules
 

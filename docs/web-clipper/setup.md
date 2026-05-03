@@ -24,6 +24,16 @@ All three save with the exact frontmatter your `/ingest` command expects. Zero m
 
 ## Setup (One-Time, ~10 Minutes)
 
+### Step 0 — Install Obsidian itself (required)
+
+The Web Clipper sends files into your vault folder via Obsidian's URL handler — so **Obsidian-the-app needs to be installed and pointed at your vault folder**, even though you can use the vault entirely through VS Code + Claude day-to-day.
+
+1. Download Obsidian from [obsidian.md/download](https://obsidian.md/download) (free, Mac/Windows/Linux).
+2. Open Obsidian → **Open folder as vault** → pick your vault folder (the one you cloned earlier).
+3. That's it. You don't need to learn Obsidian or use it for anything else — it just runs in the background as a relay so the Web Clipper has a place to drop files.
+
+If you skip this step, the Web Clipper will appear to work in the browser but nothing will land in your vault folder.
+
 ### Step 1 — Install the extension
 
 Install [Obsidian Web Clipper](https://chromewebstore.google.com/detail/obsidian-web-clipper/cnjifjpddelmedmihgijeibhnjfabmlf) from the Chrome Web Store. It's the official extension from the Obsidian team.
@@ -33,7 +43,7 @@ Install [Obsidian Web Clipper](https://chromewebstore.google.com/detail/obsidian
 1. Click the Web Clipper icon in your browser toolbar
 2. Click the gear icon (Settings)
 3. Under **General → Vaults**, click **Add vault**
-4. Enter the name of your Obsidian vault (whatever you called it when you opened the folder)
+4. Enter the name of your Obsidian vault — this is the folder name (e.g. `my-brain`). It matches what Obsidian shows in its top-left corner.
 5. Save
 
 ### Step 3 — Import the three templates
