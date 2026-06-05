@@ -145,7 +145,7 @@ If later: tell them they can ask whenever they're ready.
 > • 'I read this article' or paste a URL — I'll process it into your wiki.
 > • 'Give me a briefing' — I'll do a deeper review of everything in your vault.
 >
-> If you'd rather use slash commands, `/hello`, `/goodbye`, `/brief`, `/ingest`, and `/check` all still work. Both modes do the same thing.
+> (Slash commands like `/hello` and `/brief` still work if you ever prefer typing — but you never need them. Just say hi when you start and "I'm done" when you finish.)
 >
 > Try saying 'hi, I'm back' right now to see how it works."
 

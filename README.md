@@ -16,23 +16,22 @@ Your vault is a folder of plain text files on your computer. Claude reads them a
 
 **You just talk to Claude.** Tell it what you're thinking, share an article, ask a question. Claude knows where things go and how to organise them.
 
-### Two ways to use it (both work, pick whatever feels natural)
+### Just talk to it — especially at the start and end of a session
 
-**Mode A — Just talk.** This is the default. Speak naturally, and Claude figures out what you want.
+You don't drive this with commands. You just talk, and Claude figures out the rest. The two moments that matter most are the **start** and the **end** of a session:
 
 | What you say | What Claude does |
 |---|---|
-| *"Hi, I'm back"* | Reads your vault, briefs you on where you are |
-| *"I'm done for tonight"* | Writes session notes for next time |
-| *"Give me a briefing"* / *"What does my whole vault say?"* | Generates a weekly briefing — connections, blind spots, one thing to focus on |
+| *"Hi, I'm back"* — when you sit down | Reads your vault, briefs you on where you are |
+| *"I'm done for today"* — when you finish | Saves what happened + what's next, so next time picks up cleanly |
+| *"Give me a briefing"* / *"What does my whole vault say?"* | Weekly briefing — connections, blind spots, one thing to focus on |
 | *"I read this article"* / paste a URL | Saves the source, processes it into your wiki |
-| *"Is everything okay?"* | Runs a vault health check |
 | *"I had a thought about X"* | Captures the thought into the right file |
 | *"I just decided to drop a client"* | Logs the decision with context |
 
-**Mode B — Slash commands.** If you prefer typing commands, every behaviour above also has a slash command: `/setup`, `/hello`, `/goodbye`, `/brief`, `/ingest`, `/check`. Same result, faster to type.
+That's the whole rhythm: **say hi when you sit down, say you're done when you finish.** Everything else is just talking — Claude works out where things go.
 
-You'll find yourself drifting between both. That's fine. Both modes are first-class.
+*(If you happen to like typing commands, `/hello`, `/goodbye`, `/brief`, `/ingest`, `/check` and `/setup` all still work — but you never need them.)*
 
 ## Three Habits
 

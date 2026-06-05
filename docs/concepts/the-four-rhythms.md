@@ -2,21 +2,20 @@
 
 > **TL;DR:** Four daily/weekly rhythms run the whole vault: **setup** (once, at the start), **hello** (at session start), **goodbye** (at session end), **brief** (weekly, often automatic). Two more — **ingest** and **check** — handle articles and sanity-checks. You don't need to memorise any of them. Talk to Claude in plain English; it'll figure out which rhythm you want. If you prefer typing slash commands (`/hello`, `/goodbye`, `/brief`, `/ingest`, `/setup`, `/check`), they all still work — both modes do the same thing.
 
-## Two ways to use the vault
+## You just talk — especially "hi" and "I'm done"
 
-This vault has two layers, and **both work — pick whatever feels natural in the moment**:
+You don't run this with commands. You talk, and Claude works out which rhythm you mean. The two you'll lean on **every session** are the start and the end:
 
-**Speaking naturally (default).** You talk to Claude. Claude figures out what rhythm you want.
-- *"Hi, I'm back"* → session start briefing
-- *"I'm done for tonight"* → session end notes
+- *"Hi, I'm back"* → Claude reads your vault and briefs you on where you are
+- *"I'm done for today"* → Claude saves what happened and what's next
+
+The rest you'll use now and then:
+
 - *"Give me a briefing"* → weekly review
 - *"I read this article"* → article ingest
 - *"Is everything okay?"* → vault sanity check
 
-**Typing slash commands.** Faster if you know what you want.
-- `/hello` `/goodbye` `/brief` `/ingest` `/setup` `/check`
-
-You'll drift between both. That's expected. Both produce the same result.
+*(Slash commands — `/hello` `/goodbye` `/brief` `/ingest` `/setup` `/check` — still work if you prefer typing, but you never need to remember them.)*
 
 ## The four you'll actually use
 
