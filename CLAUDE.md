@@ -36,6 +36,8 @@ Then run these checks in order:
 
    If the vault is fresh, **route to `.claude/commands/setup.md` and run it** before answering whatever else they asked. Their question may depend on the vault being set up.
 
+   **If the owner mentions they have an existing folder of their own notes/documents to import, route to `.claude/commands/onboard.md` instead** — it bootstraps the vault from their folder rather than a blank-slate interview.
+
 4. **Staleness gate.** Check the `Focus updated:` date in README. If more than 7 days old, ask the owner to update their priorities before doing anything else. (Skip if the vault is fresh — Step 3 covers it.)
 
 5. **Briefing gate.** Check `wiki/briefings/` for the most recent briefing. If 7+ days have passed since the last one (or none exist), **route to `.claude/commands/brief.md` and run it** before doing other work. (Skip if the vault is fresh.)
@@ -57,6 +59,7 @@ When the owner speaks, recognise the intent and run the matching slash command f
 | Intent | Sample phrasings | Run this file |
 |---|---|---|
 | **First-time setup** (vault is fresh — placeholders + only `_TEMPLATE.md` in `pillars/`) | "I just downloaded this", "what is this", "let's get started", "I'm new", first-time-detection at session start | `.claude/commands/setup.md` |
+| **Bootstrap from an existing folder** (owner has their own notes/docs and wants the vault built from them) | "build my brain from this folder", "import my notes from [path]", "I have a folder about me", "populate the vault from my desktop" | `.claude/commands/onboard.md` |
 | **Session start** | "Hi", "hi I'm back", "where am I", "where are we", "catch me up", "remind me what's active", "what was I doing" | `.claude/commands/hello.md` |
 | **Session end** | "I'm done", "let's wrap up", "wrap up", "stop for tonight", "end session", "I have to go" | `.claude/commands/goodbye.md` |
 | **Weekly briefing** | "Give me a briefing", "weekly review", "what's the big picture", "what does my whole vault say", "what am I missing", or briefing-gate fires automatically | `.claude/commands/brief.md` |
@@ -120,6 +123,7 @@ tags: [relevant, tags]
 - Push back when the owner is making a mistake
 - Show your work before writing — never change the vault without approval
 - Be concise — bullets over paragraphs
+- If you hit an install / setup / OS / tooling problem you're unsure about, read `docs/AGENT-FAQ.md` before guessing or asking the owner
 
 ### Never
 - Overwrite the owner's words or paraphrase their voice

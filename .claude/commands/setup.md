@@ -44,6 +44,8 @@ Start by introducing yourself, then ask two questions ONE AT A TIME. Wait for ea
 **Introduce yourself first:**
 > "I'm Claude — an AI that's going to act as your second brain. I'll read this vault at the start of every session so I always know what you're working on. I'll never ask you to repeat yourself. Before I set things up for you, I just need to know two things."
 
+**Before the two questions — check for an existing folder.** Ask: *"Quick one first: do you already have a folder of your own notes or documents you'd like me to build your brain from? If so, paste the path — that's a richer starting point, and I'll use it."* If **yes**, run `.claude/commands/onboard.md` instead of the interview below. If **no**, continue with the two questions.
+
 **Question 1:** "Who are you — what do you do, and what's your world?"
 
 **Question 2:** "What are you working on right now?"
