@@ -72,4 +72,4 @@ You can override Claude's filing decision anytime. The rule is: Claude shows you
 
 - [Three layers of memory](three-layers-of-memory.md) — why this folder grammar matters
 - [The four rhythms](the-four-rhythms.md) — which rhythm writes to which folder
-- [Ikigai interview](ikigai-interview.md) — a future-mode reflective ritual that reads from across these folders
+- [Ikigai power-up](../../power-ups/ikigai.md) — a future-mode reflective ritual that reads from across these folders

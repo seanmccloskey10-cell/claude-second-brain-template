@@ -44,6 +44,15 @@ Their Claude plan (Pro / Max) covers Claude Code via `claude login`. If you see 
 - **Unreadable files (images, audio, large PDFs, .docx):** read what's plain text; for the rest, **ask** the owner whether the content matters before trying to force it.
 - **Owner pasted a path with spaces or quotes:** wrap paths in quotes; on Windows prefer the literal `C:\Users\...` form.
 
+## Power-ups (optional upgrades — `power-ups/` folder)
+
+The vault works fully without any of these. If the owner asks to "set up a power-up", "make my brain follow me everywhere", "add voice briefings", "set up the web clipper", or "do the ikigai thing", read the matching file in `power-ups/` (menu in `power-ups/README.md`) and walk them through it one step at a time:
+
+- `power-ups/brain-follows-you.md` — the global instruction file (`~/.claude/CLAUDE.md` / `C:\Users\<name>\.claude\CLAUDE.md`). **The biggest upgrade — recommend it early.** After creating it, the owner must fully quit and reopen VS Code.
+- `power-ups/web-clipper.md` — one-click capture (needs Obsidian installed + running; YouTube needs "Show transcript" first).
+- `power-ups/voice-briefings.md` — ElevenLabs MP3 of the weekly briefing (opt-in `.env` key; the only thing that needs Python).
+- `power-ups/ikigai.md` — future-mode reflective interview; only meaningful once the vault has a few months of content.
+
 ## Backing up their vault (when they ask)
 
 The vault is **local-only by default — that's good for privacy.** If they want a backup or cross-device sync, the safe options are: a **private** GitHub repo (never the public template), a synced folder (iCloud / OneDrive / Dropbox), or Obsidian Sync. **Never push their personal vault to a public repo.**

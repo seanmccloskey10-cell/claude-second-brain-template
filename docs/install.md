@@ -13,6 +13,17 @@ This guide takes about 15 minutes. By the end, you'll have a working second brai
 
 **You do NOT need an API key.** This runs entirely on your existing Claude subscription.
 
+### Starting from nothing installed?
+
+If none of the tools above are on your computer yet, install them in this order — each one is a normal app installer, and the page linked above walks you through it:
+
+1. **VS Code** — [code.visualstudio.com](https://code.visualstudio.com/) → download → run the installer.
+2. **Claude Code** — follow the [install guide](https://docs.anthropic.com/en/docs/claude-code). On Windows you may need to reopen VS Code (or the terminal) after installing so it appears on your PATH.
+3. **Claude login** — in a VS Code terminal, run `claude login` and sign in with your existing Claude plan.
+4. **Obsidian** — [obsidian.md](https://obsidian.md/) → download → run the installer. You only need this for browsing your vault and for the Web Clipper power-up later; you can install it now or come back to it.
+
+Doing this with a tutor or a more technical friend on a screen-share? Once VS Code + Claude Code are installed and you've run `claude login`, hand the rest to Claude: open the cloned folder, start `claude`, and either run `/setup` (blank start) or `/onboard` (if you have a folder of your own notes). Claude takes it from there.
+
 ## Step 1 — Get the template (and understand what it is)
 
 Two ways to do this. **Pick whichever feels easier — the result is the same.**
@@ -106,7 +117,7 @@ If you said "yes" during setup, this is already done. If you said "later" — se
 ## What to Do This Week
 
 1. **One thought per day** — open Claude Code, just say what's on your mind. 30 seconds, voice-transcribe if you can.
-2. **Find one article** relevant to what you're tracking. Save it in `raw/` (or use the [Web Clipper](web-clipper/setup.md) for one-click capture). Tell Claude to process it.
+2. **Find one article** relevant to what you're tracking. Save it in `raw/` (or use the [Web Clipper power-up](../power-ups/web-clipper.md) for one-click capture). Tell Claude to process it.
 3. **Let the briefing fire on its own.** Claude tracks when your last briefing was and runs one automatically when it's time. Or ask for one yourself anytime.
 
 That's the whole habit. A few minutes per day. The vault compounds.
@@ -117,7 +128,7 @@ If you'd rather *listen* to your weekly briefing on a walk than read it, you can
 
 Setup is 3 minutes. **It's entirely optional** — skip it if you'd rather just read.
 
-→ See [docs/concepts/voice-briefings.md](concepts/voice-briefings.md) for the full setup walk-through.
+→ See [the voice briefings power-up](../power-ups/voice-briefings.md) for the full setup walk-through. (And [power-ups/](../power-ups/README.md) for the other optional upgrades.)
 
 ---
 

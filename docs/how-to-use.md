@@ -119,7 +119,7 @@ Claude creates a file in `decisions/` with the context, your reasoning, and when
 These aren't available today, but they're where this is headed:
 
 - **More pillars.** You start with one. Eventually you add personal finance, health, a side project — and Claude starts making connections across all of them.
-- **The Ikigai interview.** Once your vault has a few months of content, you can run a structured self-interview that uses your vault as evidence. See [docs/concepts/ikigai-interview.md](concepts/ikigai-interview.md).
+- **The Ikigai power-up.** Once your vault has a few months of content, you can run a structured self-interview that uses your vault as evidence. See [the ikigai power-up](../power-ups/ikigai.md) (and the rest of the [power-ups menu](../power-ups/README.md)).
 - **Scheduled briefings.** In Claude Cowork, you can schedule weekly briefings to run every Monday morning. You wake up to a briefing without doing anything.
 - **The producer layer.** Your vault doesn't just store knowledge — it produces things. Proposals, emails, strategies — all informed by your accumulated context.
 

@@ -1,14 +1,16 @@
-# The Ikigai Interview (Future Concept)
+# Power-Up: The Ikigai Interview
 
-> **TL;DR:** A structured self-interview rooted in the Japanese concept of *ikigai* (生き甲斐 — "reason for being"). It maps your work, skills, passions, and what the world pays you for onto a four-circle framework. **Best used once your vault has real content in it** — at least a few months of captured thoughts, decisions, and processed sources. The interview reads your vault as evidence, not as a blank-slate questionnaire.
+> **TL;DR:** A structured self-interview rooted in the Japanese concept of *ikigai* (生き甲斐 — "reason for being"). It maps what you love, what you're good at, what the world needs, and what you can be paid for onto a four-circle framework — reading your vault as **evidence**, not as a blank questionnaire. This is a **future-mode power-up**: best run once your vault has a few months of real content. Run it too early and you get aspirational fluff. When you're ready, paste the prompt near the bottom of this page into Claude Code.
 
-## What this doc is
+## Why this is a power-up, not a day-one feature
 
-This is a description, not a working command. There's no `/ikigai` slash command. When you're ready, paste the prompt at the bottom of this page into Claude Code and it'll walk you through the interview using your vault as raw material.
+Most of the power-ups make the vault *do more*. This one makes the vault *mean more* — but only after you've fed it. A blank-slate ikigai questionnaire forces you to invent answers in the moment, and you end up with a tidy diagram that has nothing to do with how you actually spend your time.
 
-Think of this as a **future-mode** for your vault: not the daily capture loop, not the weekly briefing, but a once-or-twice-a-year reflective exercise that asks the harder question — *what is your work actually pointing at?*
+A vault-grounded ikigai interview is different. By the time you have a few months of weekly briefings, a pillar or two with real Owner's Take entries, decisions you can look back on, and articles you've processed — you have *evidence*. The interview reads that evidence and asks the harder question: *given how you actually spent your time, what is your work pointing at? What are you avoiding? What surprises you?*
 
-## Why ikigai
+**Rule of thumb: wait until you have at least 4–6 weekly briefings in your vault before running this.** If your vault is fresh, run the normal setup wizard instead and come back here in a few months.
+
+## What ikigai is
 
 Ikigai is a Japanese idea, often translated as "reason for being" or "the thing that makes life worth living." It's been popularised in the West through a four-circle Venn diagram:
 
@@ -35,47 +37,28 @@ Most people have two or three circles overlapping. The interesting work is findi
 
 > ⚠️ **Honest caveat:** the four-circle diagram is a Western popularisation, not the original Japanese concept. In Japan, *ikigai* is closer to "small daily things that give life meaning" than a career-strategy framework. Both readings have value. Treat the interview as a useful structuring tool, not a sacred map.
 
-## Why "after you have vault data"
-
-A blank-slate ikigai questionnaire forces you to *invent* answers in the moment. That's how you end up with aspirational fluff that doesn't match how you actually spend your time.
-
-A vault-grounded ikigai interview is different. By the time you have:
-- A few months of weekly briefings
-- Several pillars (or one pillar with rich Owner's Take entries)
-- Decisions you can look back on
-- Articles you've ingested and the wiki pages they produced
-- Recurring themes Claude has surfaced in briefings
-
-…you have *evidence*. The interview reads your evidence and asks: *given how you actually spent your time, what does your ikigai look like? What are you avoiding? What surprises you?*
-
-Rule of thumb: **wait until you have at least 4–6 weekly briefings in your vault** before running this. If your vault is fresh, run the regular setup wizard instead and come back here in a few months.
-
 ## What the interview does
 
-When you're ready, the prompt at the bottom of this page does the following:
+When you paste the prompt below, Claude:
 
 1. **Reads your vault.** Pillars, the most recent 8 weekly briefings, all decisions, the wiki index, and Owner's Take sections across the whole vault.
-2. **Sketches a starting picture.** Based on what it sees, it makes a tentative read of where each of the four circles sits for you. This is *not* the answer — it's a draft you'll push back on.
-3. **Walks you through one circle at a time, in this order:**
-   - Good at — easiest to evidence from the vault
-   - Paid for — also easy to evidence
-   - Love — harder; needs reflection
-   - World needs — hardest; you have to look up from your own work
+2. **Sketches a starting picture.** A tentative read of where each of the four circles sits for you — *not* the answer, a draft you'll push back on.
+3. **Walks you through one circle at a time**, in this order: good-at → paid-for → love → world-needs (easiest to evidence first, hardest last).
 4. **Asks one question at a time.** Reflective, vault-grounded. *"You've written about X four times in the last two months — does that count as something you love, or are you complaining about it?"*
-5. **Builds the Venn diagram in writing.** Saves it to `decisions/YYYY-MM-DD-ikigai-snapshot.md` (yes, decisions/ — because it's a self-reflective decision about where you stand).
-6. **Surfaces the gaps.** Where do you only have two circles? Three? What would it take to add the fourth? **This is the most useful output.**
-7. **Suggests one experiment.** Not a five-year plan. One concrete thing to try in the next month that closes a gap.
+5. **Builds the diagram in writing.** Saves it to `decisions/YYYY-MM-DD-ikigai-snapshot.md` (decisions/, because it's a self-reflective decision about where you stand).
+6. **Surfaces the gaps.** Where do you only have two circles? Three? What would close the fourth? **This is the most useful output.**
+7. **Suggests one experiment.** Not a five-year plan — one concrete thing to try in the next month that closes a gap.
 
 ## When to run it
 
 - **Once you've used the vault for 3+ months.** Rough rule.
 - **At natural inflection points** — finishing a project, considering a pivot, end of a year, after a hard decision.
-- **NOT every week.** This isn't a weekly briefing. It's a once-or-twice-a-year exercise. Running it too often dilutes the depth.
+- **NOT every week.** This is a once-or-twice-a-year exercise. Running it too often dilutes the depth.
 
 ## When NOT to run it
 
-- Vault is fresh — there's no evidence to read yet. Run the regular setup wizard.
-- You're in the middle of a hard decision and looking for the framework to validate what you'd already decided. The interview will see through that and push back; you may not want that right now.
+- Vault is fresh — there's no evidence to read yet. Run the normal setup wizard.
+- You're mid-way through a hard decision and looking for a framework to validate what you'd already decided. The interview will see through that and push back; you may not want that right now.
 - You only have one pillar and haven't been adding to it. Capture more first.
 
 ## The prompt to paste (when you're ready)
@@ -221,17 +204,16 @@ on what was in my vault at the time.
 - [[decisions/...]]
 ```
 
-## Why this isn't built as a slash command
-
-Three reasons:
+## Why this isn't a slash command
 
 1. **It only makes sense once you have data.** A working command would tempt people to run it on day one, get aspirational fluff, and lose trust in the vault.
 2. **It's a reflective ritual, not a workflow.** Slash commands are for routine work. This is something you do once or twice a year with intention.
-3. **The prompt should be visible.** Reading the prompt above tells you what the interview *is* before you run it. That's part of what makes it useful — you can adjust it for your situation before pasting.
+3. **The prompt should be visible.** Reading the prompt above tells you what the interview *is* before you run it — and lets you adjust it for your situation before pasting.
 
 When you're ready: paste the prompt above into Claude Code in your vault folder. The interview will take 30–60 minutes. Don't rush it.
 
 ## Cross-references
 
-- [docs/concepts/three-layers-of-memory.md](three-layers-of-memory.md) — the vault layer this interview operates on
-- [docs/concepts/folder-grammar.md](folder-grammar.md) — why the snapshot lives in `decisions/`
+- [Power-ups menu](README.md) — the other upgrades
+- [Three layers of memory](../docs/concepts/three-layers-of-memory.md) — the vault layer this interview operates on
+- [Folder grammar](../docs/concepts/folder-grammar.md) — why the snapshot lives in `decisions/`

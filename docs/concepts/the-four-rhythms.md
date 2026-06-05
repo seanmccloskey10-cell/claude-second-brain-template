@@ -54,7 +54,7 @@ A full vault review. Reads your pillars, wiki, decisions, recent raw items, and 
 - Open questions, unprocessed items
 - Vault health (orphan pages, stale projects, anything weird)
 - One thing to focus on this week
-- An optional voice memo script (turned into MP3 audio if you've set up the [ElevenLabs key](voice-briefings.md))
+- An optional voice memo script (turned into MP3 audio if you've set up the [voice briefings power-up](../../power-ups/voice-briefings.md))
 
 Claude is instructed to fire this automatically if 7+ days have passed since the last briefing. You can also trigger it yourself anytime.
 
@@ -88,6 +88,6 @@ If you forget what to say, just describe what you're trying to do. Claude is pat
 
 - [Three layers of memory](three-layers-of-memory.md) — why these rhythms exist
 - [Folder grammar](folder-grammar.md) — where each rhythm writes
-- [Voice briefings](voice-briefings.md) — the optional audio version of the weekly briefing
+- [Voice briefings power-up](../../power-ups/voice-briefings.md) — the optional audio version of the weekly briefing
 - [Capacity and compaction](capacity-and-compaction.md) — why hello and goodbye matter even within a single project
-- [Ikigai interview](ikigai-interview.md) — a future-mode reflective ritual, once your vault has data
+- [Ikigai power-up](../../power-ups/ikigai.md) — a future-mode reflective ritual, once your vault has data

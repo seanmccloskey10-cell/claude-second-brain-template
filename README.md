@@ -49,7 +49,6 @@ Everything else is handled by Claude behind the scenes.
 your-vault/
 ├── README.md          ← This file (your vault home page, customised by setup)
 ├── CLAUDE.md          ← Instructions Claude reads automatically (you don't need to read this)
-├── HANDOFF-PROMPT.md  ← Paste into Claude Code if you want the agent to set this up for you
 ├── HELP.md            ← Diagnose-and-fix prompt for when something breaks
 ├── .env.example       ← Optional API keys (ElevenLabs for voice briefings); copy to .env to enable
 ├── pillars/           ← The trunks — what you're tracking (created by setup)
@@ -59,6 +58,7 @@ your-vault/
 │   └── briefings/     ← Weekly briefings saved here
 │       └── audio/     ← Optional MP3 voice briefings (if ElevenLabs key set)
 ├── inbox/             ← Quick thoughts, not yet sorted
+├── power-ups/         ← Optional upgrades — brain-follows-you, web-clipper, voice, ikigai (add when ready)
 ├── decisions/         ← Decisions with context, so future-you knows why
 ├── log.md             ← Activity log — what was ingested, when briefings ran
 ├── mistakes-made.md   ← Error log (write-only — durable lessons get promoted into CLAUDE.md)
@@ -75,7 +75,7 @@ your-vault/
 
 **Nothing extra for the core experience.** This runs on your existing Claude plan. No API key, no second bill.
 
-**One optional add-on:** if you want your weekly briefing read aloud as an MP3 (so you can listen on a walk), you can plug in a free [ElevenLabs](https://elevenlabs.io) key in `.env`. Free tier covers ~3 audio briefings per month. Skip it if you'd rather just read — everything else works the same. See [docs/concepts/voice-briefings.md](docs/concepts/voice-briefings.md).
+**One optional add-on:** if you want your weekly briefing read aloud as an MP3 (so you can listen on a walk), you can plug in a free [ElevenLabs](https://elevenlabs.io) key in `.env`. Free tier covers ~3 audio briefings per month. Skip it if you'd rather just read — everything else works the same. See the [voice briefings power-up](power-ups/voice-briefings.md) — one of several optional [power-ups](power-ups/README.md).
 
 ## Getting Started
 
@@ -94,7 +94,7 @@ your-vault/
 
 That's it. The wizard interviews you about what you want to track, customises your vault, creates your first pillar, and offers to set up the global instruction file (so the brain follows you into every project).
 
-For a more detailed step-by-step (with troubleshooting), see [docs/install.md](docs/install.md). Want to hand the whole setup off to your AI agent instead of doing it yourself? See [HANDOFF-PROMPT.md](HANDOFF-PROMPT.md) — paste it into Claude Code and the agent handles everything.
+For a more detailed step-by-step (with troubleshooting), see [docs/install.md](docs/install.md). Doing this with a tutor on a screen-share? Once VS Code + Claude Code are installed, just open the cloned folder, start `claude`, and say *"hi, I'm new"* — the agent walks you through everything.
 
 **New here? Read these short concept docs first** (each ~5 min):
 - [docs/concepts/three-layers-of-memory.md](docs/concepts/three-layers-of-memory.md) — the boat / island / continent model
@@ -156,11 +156,14 @@ By default, your vault only works when the vault folder is open. There's a way t
 - Not a place for code — link to code, don't paste it
 - Not finished — it grows with you
 
-## Future Ideas
+## Power-Ups
 
-Documented but not built. Things you can adopt later, once you have a vault with real content in it:
+Optional upgrades you can add when you're ready — none required, the core vault works without them. See **[power-ups/](power-ups/README.md)** for the full menu:
 
-- **The Ikigai interview** ([docs/concepts/ikigai-interview.md](docs/concepts/ikigai-interview.md)) — a structured self-interview rooted in the Japanese concept of *ikigai* (reason for being). Designed to surface the intersection of what you love, what you're good at, what the world needs, and what you can be paid for. Best used after a few months of vault use, when you have enough captured to reflect on.
+- **[Brain follows you everywhere](power-ups/brain-follows-you.md)** — Claude knows your vault from any folder. The biggest single upgrade; add it early.
+- **[Web Clipper](power-ups/web-clipper.md)** — one-click capture of YouTube videos, X posts, and articles.
+- **[Voice briefings](power-ups/voice-briefings.md)** — your weekly briefing as an MP3 for the walk (free ElevenLabs key).
+- **[Ikigai](power-ups/ikigai.md)** — a deep, vault-grounded self-interview. Future-mode: run it once you've built up a few months of notes.
 
 ## Something Not Working?
 

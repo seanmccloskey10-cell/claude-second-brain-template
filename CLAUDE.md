@@ -82,8 +82,13 @@ For everything else (a thought, a question, a brain dump, a decision, a quick fa
 | `inbox/` | Quick capture — thoughts, ideas, anything not yet sorted |
 | `decisions/` | Decisions with context, so future-them knows why |
 | `docs/` | Setup guides and reference (for the owner, not for you) |
+| `power-ups/` | Owner-facing guides to optional upgrades — brain-follows-you (global file), web-clipper, voice-briefings, ikigai. The vault works fully without any of them. |
 | `.claude/commands/` | Canonical workflow specs (slash commands) |
 | `.claude/skills/` | Optional capabilities the vault works fine without (e.g. voice memo) |
+
+**Power-ups:** if the owner asks to "set up a power-up", "make my brain follow me everywhere", "add voice briefings", "set up the web clipper", or "do the ikigai thing", read the matching file in `power-ups/` (or `power-ups/README.md` for the menu) and walk them through it one step at a time.
+
+**Onboarding from existing material:** `.claude/commands/onboard.md` now handles three shapes of starting material — (a) one folder/project, (b) little/no data → routes to the `/setup` interview, (c) notes scattered across the computer → a permissioned broad sweep of Desktop/Documents/Downloads. The git-detach (Step 0) and privacy pass (Step 2) are mandatory.
 
 ## File conventions
 
@@ -179,9 +184,9 @@ The owner should never have to ask "can you update the wiki?" It happens as a si
 `.claude/skills/` holds optional capabilities the vault works fine without. The owner enables them deliberately, usually by adding a key to `.env`.
 
 Currently shipped:
-- `generate-voice-memo` — turns the weekly briefing into an MP3 via the ElevenLabs API. Opt-in: requires `Eleven_Labs=` in `.env`. If the key is missing, the briefing skips the audio step silently. See `docs/concepts/voice-briefings.md`.
+- `generate-voice-memo` — turns the weekly briefing into an MP3 via the ElevenLabs API. Opt-in: requires `Eleven_Labs=` in `.env`. If the key is missing, the briefing skips the audio step silently. See `power-ups/voice-briefings.md`.
 
-When the owner asks about voice briefings, audio versions, or "can I listen to this on a walk?", point them at `docs/concepts/voice-briefings.md` for the 3-minute setup. Don't push the skill — it's purely additive.
+When the owner asks about voice briefings, audio versions, or "can I listen to this on a walk?", point them at `power-ups/voice-briefings.md` for the 3-minute setup. Don't push the skill — it's purely additive.
 
 ## Mistakes log protocol
 

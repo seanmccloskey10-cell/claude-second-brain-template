@@ -99,11 +99,15 @@ Show the file before writing. Get approval.
 
 After writing, update the README's `**Your pillar:**` line to point at the actual file you just created.
 
-## Step 6 — Offer to set up the global instruction file
+## Step 6 — Set up the global instruction file (recommended — the big unlock)
+
+This is the single biggest upgrade. Don't present it as a throwaway option — recommend it.
 
 Tell the owner:
 
-> "There's one more thing worth doing. Right now this vault only works when this folder is open in VS Code. There's a way to make me read your vault from ANY folder on your computer — so when you're working on something else, I still know about your work. It takes 30 seconds and I can do it for you. Want to set it up?"
+> "One more thing, and I really recommend this one. Right now this vault only works when this folder is open in VS Code. There's a way to make me read your vault from ANY folder on your computer — so when you're building something else, writing an email, anything, I still know about your work. It's the difference between a folder you open and an assistant that's always there. It takes 30 seconds and I can do it for you now. Want me to? (recommended)"
+
+(This is the "brain follows you everywhere" power-up — full details in `power-ups/brain-follows-you.md` if they want to read it first.)
 
 If yes:
 1. Detect the operating system. On Windows the path is `C:\Users\[username]\.claude\CLAUDE.md`. On Mac/Linux it's `~/.claude/CLAUDE.md`. Derive the username from the home directory.
@@ -147,18 +151,9 @@ If later: tell them they can ask whenever they're ready.
 >
 > (Slash commands like `/hello` and `/brief` still work if you ever prefer typing — but you never need them. Just say hi when you start and "I'm done" when you finish.)
 >
+> When you've used this a while, there are optional **power-ups** you can add — one-click web capture, voice briefings you can listen to on a walk, and an 'ikigai' reflection once you've built up a few months of notes. They live in the `power-ups/` folder. No rush — the brain works fully without them.
+>
 > Try saying 'hi, I'm back' right now to see how it works."
-
-## Step 8.5 — Clean up setup-time files
-
-After the closing message, the vault still has `HANDOFF-PROMPT.md` and `START-HERE.md`-style files at the root that were only useful before setup. They add cognitive noise post-setup.
-
-Tell the owner:
-
-> "One last bit of housekeeping. There are a couple of files at the top of your vault that were only needed for setup — `HANDOFF-PROMPT.md` and any `START-HERE.md` if it exists. Want me to move them into `docs/setup-archive/` so your vault root stays clean? You can always grab them back if you re-clone for someone else."
-
-If yes: create `docs/setup-archive/` and move (not delete) those files there. Show the move before doing it.
-If no: leave them alone.
 
 ## Rules
 

@@ -37,4 +37,4 @@ The continent is when your work spans multiple things, you have cross-cutting kn
 - [The four rhythms](the-four-rhythms.md) — how setup, hello, goodbye, and the weekly briefing make the continent work
 - [Folder grammar](folder-grammar.md) — what each folder in the vault is for
 - [Capacity and compaction](capacity-and-compaction.md) — why even the continent has session-level limits
-- [Ikigai interview](ikigai-interview.md) — a reflective ritual that uses your continent as evidence
+- [Ikigai power-up](../../power-ups/ikigai.md) — a reflective ritual that uses your continent as evidence
