@@ -2,7 +2,7 @@
 
 **Your AI forgets everything. This fixes that.**
 
-> **👋 First time?** The folder you just cloned **is your vault** — don't create a new empty folder alongside it. Open Claude Code in this folder, run `claude`, and say something like *"hi, I'm new — let's get started"*. The setup wizard takes 5–10 minutes.
+> **👋 First time?** The folder you just cloned **is your vault** — don't create a new empty folder alongside it. Open this folder in VS Code, open the Terminal (**View → Terminal**), type `claude` and hit enter, then say something like *"hi, I'm new — let's get started"*. The setup wizard takes 5–10 minutes.
 
 This is a system that gives Claude long-term memory about you and your work. Every time you start a new session — in any folder, on any project — Claude already knows who you are, what you're working on, and what matters to you.
 

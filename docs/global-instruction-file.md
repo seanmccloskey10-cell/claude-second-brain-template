@@ -1,5 +1,7 @@
 # Make Your Brain Follow You Everywhere
 
+> _This is the same thing as the **["brain follows you everywhere" power-up](../power-ups/brain-follows-you.md)** — two names, one feature. This page is the technical reference; the power-up page is the friendly walk-through._
+
 By default, your vault only works when the vault folder is open in VS Code. This means if you're building an app, writing code, or working on anything else — Claude doesn't know about what you've been tracking.
 
 There's a fix. It takes 2 minutes.

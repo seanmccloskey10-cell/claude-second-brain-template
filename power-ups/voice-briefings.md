@@ -18,6 +18,8 @@ The vault is designed to work without any API keys, on your existing Claude plan
 
 ## Setup (3 minutes)
 
+> **Good news — the voice is already chosen.** A British female narrator is wired in as the default (`DEFAULT_VOICE_ID` in the skill), so you don't have to go hunting through the voice library or click anything. The *only* thing you add is your own free key. And that key lives only on your machine in a gitignored `.env` — it's never committed, never shared, and never uses anyone else's ElevenLabs account. (Want a different voice? That's optional — see "Changing the voice" below.)
+
 ### 1. Get a free ElevenLabs key
 
 1. Go to [elevenlabs.io](https://elevenlabs.io) and sign up. **No credit card needed for the free tier.**

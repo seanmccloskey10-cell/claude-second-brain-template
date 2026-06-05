@@ -44,15 +44,16 @@ If the file exists but is named `global.md`, `Claude.md`, or anything other than
 
 ### 5. Slash commands present
 
-Check `.claude/commands/` for all six canonical commands:
+Check `.claude/commands/` for all seven canonical commands:
 - `setup.md`
+- `onboard.md`
 - `hello.md`
 - `goodbye.md`
 - `brief.md`
 - `ingest.md`
 - `check.md` (this file — should be present since you're running)
 
-- ✅ if all 6 present
+- ✅ if all 7 present
 - ⚠️ if some missing — list them. Recommend `git pull` to get latest, or copy from the template repo.
 
 ### 6. Web Clipper templates
@@ -68,12 +69,20 @@ Check `docs/web-clipper/` for:
 
 ### 7. Vault structure (folders)
 
-Check that these folders exist at root: `pillars/`, `raw/`, `wiki/`, `inbox/`, `decisions/`, `docs/`, `.claude/`.
+Check that these folders exist at root: `pillars/`, `raw/`, `wiki/`, `inbox/`, `decisions/`, `docs/`, `power-ups/`, `.claude/`.
 
 - ✅ if all present
 - ⚠️ if any missing — list them. They were in the template, so the owner may have deleted by accident.
 
-### 8. Briefing freshness (informational, not a fail)
+### 8. Privacy — is the vault still linked to the public template?
+
+Run `git remote -v` (if there's a `.git/` folder).
+
+- ✅ if there's no `origin`, or `origin` is the owner's OWN private repo — their brain is private
+- ❌ if `origin` still points at a `claude-second-brain-template` (or other public template) repo — flag it: "Your vault is still connected to the public template I came from. That means a backup-push could fail or go to the wrong place. Want me to disconnect it so your brain is fully private? (I'll run `git remote remove origin`.)" This is the single most important privacy check — surface it clearly.
+- ℹ️ if there's no `.git/` folder at all — note it's fine; the vault just isn't version-controlled.
+
+### 9. Briefing freshness (informational, not a fail)
 
 Check `wiki/briefings/` for the most recent briefing file.
 
@@ -94,9 +103,10 @@ Use this exact shape, keep it tight:
 ✅ /setup has run — Focus updated 2026-04-17, pillar: [[pillars/yan-tutoring]]
 ✅ Pillar file exists — pillars/yan-tutoring.md
 ❌ Global instruction file missing — expected at C:\Users\yan\.claude\CLAUDE.md
-✅ All 6 slash commands present
+✅ All 7 slash commands present
 ✅ Web Clipper templates ready
 ✅ Folder structure complete
+✅ Vault is private (not linked to the public template)
 ℹ️ No briefings yet (normal for fresh vault)
 
 ## Summary

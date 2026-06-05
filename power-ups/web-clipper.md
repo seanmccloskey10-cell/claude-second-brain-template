@@ -2,6 +2,8 @@
 
 > **TL;DR:** Install one Chrome extension, import three template files, and you can save any YouTube video, X post, or article into your vault with a single click — pre-formatted and ready for Claude to process. Setup takes 10 minutes. Add it once your daily rhythm is going and you want reading-time to feed your brain automatically.
 
+> **Prerequisite:** Obsidian-the-app must be installed and pointed at your vault folder — the clipper delivers files *through* Obsidian. It's a free download ([obsidian.md/download](https://obsidian.md/download)); Step 1 below covers it. Without Obsidian installed and running, the clipper looks like it works in the browser but nothing lands in your vault.
+
 ## When to add it
 
 Once the core loop feels natural and you find yourself reading things you wish your brain knew about. The Web Clipper is what closes the gap between *"I read something useful"* and *"my vault knows it."* No point adding it on day one — add it when capture-as-you-read sounds appealing.

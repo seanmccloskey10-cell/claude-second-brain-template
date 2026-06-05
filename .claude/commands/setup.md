@@ -37,6 +37,17 @@ Greet the owner warmly:
 
 > "Welcome. Let's get your second brain set up. This will take about 5–10 minutes. I'll ask you a few questions to learn what you want to track, then I'll customise this vault for you. I'll show you every change before I make it — nothing happens without your okay."
 
+## Step 2.5 — Make this vault private (git safety — do this once, early)
+
+If the owner cloned this from the public template, the vault is still linked to it. Their private brain must not stay tied to a public repo. **This mirrors `/onboard` Step 0 — and it's idempotent, so if you arrived here from `/onboard` it'll simply skip.**
+
+1. Run `git remote -v` (only if a `.git/` folder exists). **If there's no `origin`, it's already detached — skip this step silently.** (This is the case if you came from `/onboard`, which already ran its Step 0.)
+2. If `origin` points at a `claude-second-brain-template` (or any template) repo, tell the owner plainly: *"One quick safety thing before we go further: right now this folder is still connected to the public template I came from. I'm going to disconnect it so your brain is 100% private and yours — nothing here can ever be sent to that public place. Okay?"*
+3. On yes: `git remote remove origin` (keeps their local history). **Default to this.** If they'd rather a totally clean slate, `rm -rf .git` then `git init`.
+4. Confirm `.gitignore` already excludes `.env`. Their vault is **local-only** unless they later choose a *private* backup (never a public repo — see `docs/AGENT-FAQ.md` → "Backing up their vault").
+
+Do not skip this. A student who only ever runs `/setup` (never `/onboard`) would otherwise stay linked to the public repo forever.
+
 ## Step 3 — Interview
 
 Start by introducing yourself, then ask two questions ONE AT A TIME. Wait for each answer before asking the next.
@@ -44,7 +55,7 @@ Start by introducing yourself, then ask two questions ONE AT A TIME. Wait for ea
 **Introduce yourself first:**
 > "I'm Claude — an AI that's going to act as your second brain. I'll read this vault at the start of every session so I always know what you're working on. I'll never ask you to repeat yourself. Before I set things up for you, I just need to know two things."
 
-**Before the two questions — check for an existing folder.** Ask: *"Quick one first: do you already have a folder of your own notes or documents you'd like me to build your brain from? If so, paste the path — that's a richer starting point, and I'll use it."* If **yes**, run `.claude/commands/onboard.md` instead of the interview below. If **no**, continue with the two questions.
+**Before the two questions — check for existing material (folder OR scattered).** Ask: *"Quick one first: do you already have notes or documents about yourself somewhere — either in one folder, or just scattered around (Desktop, Downloads, that kind of thing)? If it's in a folder, paste the path. If it's scattered, just say so — I can look around for you. Either way it's a much richer starting point."* If they have **anything** — a folder OR scattered files — run `.claude/commands/onboard.md` instead of the interview below (it handles both, including a careful look around their computer). Only continue with the two questions if they genuinely have nothing written down yet.
 
 **Question 1:** "Who are you — what do you do, and what's your world?"
 
@@ -153,7 +164,9 @@ If later: tell them they can ask whenever they're ready.
 >
 > When you've used this a while, there are optional **power-ups** you can add — one-click web capture, voice briefings you can listen to on a walk, and an 'ikigai' reflection once you've built up a few months of notes. They live in the `power-ups/` folder. No rush — the brain works fully without them.
 >
-> Try saying 'hi, I'm back' right now to see how it works."
+> The whole habit is small: drop me a thought or two a day, save the odd article, and let the weekly briefing build up. It gets sharper every week.
+>
+> Try saying 'hi, I'm back' right now to see how it works — you'll get a short briefing, which is completely normal for a brand-new vault. It fills out as you add more."
 
 ## Rules
 
