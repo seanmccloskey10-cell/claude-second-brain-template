@@ -100,9 +100,9 @@ Use this exact shape, keep it tight:
 **Vault:** [path]
 
 ✅ Vault structure (CLAUDE.md, README.md, all folders present)
-✅ /setup has run — Focus updated 2026-04-17, pillar: [[pillars/yan-tutoring]]
-✅ Pillar file exists — pillars/yan-tutoring.md
-❌ Global instruction file missing — expected at C:\Users\yan\.claude\CLAUDE.md
+✅ /setup has run — Focus updated 2026-04-17, pillar: [[pillars/tutoring-practice]]
+✅ Pillar file exists — pillars/tutoring-practice.md
+❌ Global instruction file missing — expected at C:\Users\maria\.claude\CLAUDE.md
 ✅ All 7 slash commands present
 ✅ Web Clipper templates ready
 ✅ Folder structure complete
